@@ -8,7 +8,7 @@ int main()
 {
     char a[100];
     char b[100];
-    fgets (a, STR_MAX, stdin);
+    gets (a);
     int i=0;
     int len=strlen(a);
     printf("%d \n", len);
