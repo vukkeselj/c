@@ -18,5 +18,5 @@ int main ()
 {
     int niz[MAX];
     init_int_array(niz, MAX);
-    
+    printf("%d\n", )
 }
