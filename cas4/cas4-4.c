@@ -14,7 +14,7 @@ int init_int_array(int *arr, int size)
     return 0;
 }
 
-int main ();
+int main ()
 {
     int niz[MAX];
     init_int_array(niz, MAX);
