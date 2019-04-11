@@ -6,33 +6,26 @@
 int strcm(char *str1, char *str2)
 {
     int i=0;
-    if (strlen(str1)==strlen(str2))
+    while (str1[i] !=10)
     {
-        while (str1[i] !=10)
+        if (str1[i]==str2[i])
         {
-            if (str1[i]==str2[i])
-            {
-                i++;
-            }
-            else
-            {
-                return 0;
-            }
+            i++;
         }
-        return 1;
+        else
+        {
+            return 0;
+        }
     }
-    else
-    {
-        return 0;
-    }
+    return 1;
 }
 
 int main()
 {   
-    char a[STR_MAX];
+    char a[100];
     printf("Unesite prvu rec: ");
     fgets (a, STR_MAX, stdin);
-    char b[STR_MAX];
+    char b[100];
     printf("Unesite drugu rec: ");
     fgets (b, STR_MAX, stdin);
     

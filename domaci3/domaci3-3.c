@@ -4,11 +4,12 @@
 int strle(char *str)
 {
     int i=0;
-    while (str[i]!=0)
+    while (str[i]!=10)
     {
         i++;
     }
-    printf("%d\n", i-1);
+    return i;
+    //printf("%d\n", i-1);
 }
 
 int main()
@@ -16,5 +17,6 @@ int main()
     char a[100];
     fgets(a, STR_MAX, stdin);
     int y = strle(a);
+    printf("%d\n", y);
     return 0;
 }

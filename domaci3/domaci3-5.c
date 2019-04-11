@@ -6,11 +6,11 @@
 int strcm(char *str1, char *str2)
 {
     int i=0;
-    if (str1[i]==str2[i])
+    if (str1[1]==str2[1])
     {
         return 0;
     }
-    else if
+    else if (str1[1]str2[1])
     {
         return 1;
     }
