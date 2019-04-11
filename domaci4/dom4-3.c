@@ -17,6 +17,7 @@ int main()
         for (j=0; j<2; j++)
         {
             mat1[i][j]= rand()%2;
+            printf("%d\n", mat1[i][j]);
         }
     }
     
@@ -34,6 +35,7 @@ int main()
         for (j=0; j<2; j++)
         {
             mat2[i][j]= rand()%2;
+            printf("%d\n", mat2[i][j]);
         }
     }
     for (i=0; i<2; i++)

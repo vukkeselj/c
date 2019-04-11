@@ -1,9 +1,10 @@
 #include <stdio.h>
-
+#include <time.h>
+#include <stdlib.h>
 
 int main()
 {
-    int zbir [2][3];
+    int zbir [2][2];
     int i=0;
     int j=0;
     int sum=0;
