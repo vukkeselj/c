@@ -1,19 +1,20 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+#include "matrice.h"
 
 int main()
 {
-    int mat1 [2][2];
-    int mat2 [2][2];
+    int mat1 [ROW][COL];
+    int mat2 [ROW][COL];
     int i=0;
     int j=0;
     int jednakost=0;
     srand(time(0));
     //popunjavanje prve matrice
-    for (i=0; i<2; i++)
+    for (i=0; i<ROW; i++)
     {
-        for (j=0; j<2; j++)
+        for (j=0; j<COL; j++)
         {
             mat1[i][j]= rand()%2;
             mat2[i][j]= rand()%2;
@@ -23,7 +24,9 @@ int main()
             }
         }
     }
-    if (jednakost ==4)
+    ispisi_matricu(mat1);
+    ispisi_matricu(mat2);
+    if (jednakost == ROW*COL)
     {
         printf("Jednaki su\n");
     }

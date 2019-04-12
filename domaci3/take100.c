@@ -8,6 +8,7 @@
 int strcm(char *str1, char *str2)
 {
     int i=0;
+    //koristiti str_duzina
     if (strlen(str1)==strlen(str2))
     {
         while (str1[i] !=10)
@@ -29,35 +30,39 @@ int strcm(char *str1, char *str2)
     }
 }
 
-
-
-
-
 int main()
 {
     char unos_korisnika[STR_MAX];
     fgets(unos_korisnika, STR_MAX, stdin);
-    char kamen[]="kamen ";
-    char papir[]="papir ";
-    char makaze[]="makaze ";
+    char kamen[]="kamen\n";
+    char papir[]="papir\n";
+    char makaze[]="makaze\n";
     srand(time(0));
     int x=strcm(unos_korisnika,kamen);
     int y=strcm(unos_korisnika,papir);
     int z=strcm(unos_korisnika,makaze);
+    int igrac;
     
     //poredjenje stringa koji je uneo user sa predefinisanim stringovima "kamen", "papir" i "makaze"
     
-    if (x==1)
+    if (strcm(unos_korisnika,kamen))
     {
         printf("korisnik je uneo: %s\n", unos_korisnika);
+        igrac = 1;
     }
     else if (y==1)
     {
         printf("korisnik je uneo: %s\n", unos_korisnika);
+        igrac = 2;
     }
     else if (z==1)
     {
         printf("korisnik je uneo: %s\n", unos_korisnika);
+        igrac = 3;
+    }
+    else
+    {
+        igrac = 0;
     }
     //izbor kompa
     int komp=rand()%3+1;
@@ -74,45 +79,29 @@ int main()
         printf("komp je odabrao: makaze\n");
     }
     
-    if ((x==1)&&(komp==1))
+    if (igrac==0)
     {
-        printf("nereseno\n");
+        printf("unos igraca nije dobar, pokrenite program ponovo\n");
     }
-    else if ((x==1)&&(komp==2))
+    else if ((komp==1)&&(igrac==3))
     {
         printf("komp pobedio\n");
     }
-    else if ((x==1)&&(komp==3))
+    else if ((komp==3)&&(igrac==1))
     {
         printf("igrac pobedio\n");
-    }
-    else if ((y==1)&&(komp==1))
-    {
-        printf("igrac pobedio\n");
-    }
-    else if ((y==1)&&(komp==2))
-    {
-        printf("nereseno\n");
-    }
-    else if ((y==1)&&(komp==3))
+    }       
+    else if (komp > igrac)
     {
         printf("komp pobedio\n");
     }
-    else if ((z==1)&&(komp==1))
-    {
-        printf("komp pobedio\n");
-    }
-    else if ((z==1)&&(komp==2))
+    else if (igrac > komp)
     {
         printf("igrac pobedio\n");
-    }
-    else if ((z==1)&&(komp==3))
-    {
-        printf("nereseno\n");
     }
     else
     {
-        printf("unos igraca nije dobar, pokrenite program ponovo\n");
+        printf("nereseno\n");
     }
     
     return 0;
