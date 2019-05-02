@@ -2,7 +2,6 @@
 #include<string.h>
 #define STR_MAX 100
 
-
 int strcm(char *str1, char *str2)
 {
     int i=0;
@@ -26,7 +25,6 @@ int strcm(char *str1, char *str2)
         return 0;
     }
 }
-
 int main()
 {   
     char a[STR_MAX];
